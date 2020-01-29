@@ -1,22 +1,10 @@
-#JS Mentorship
+# JS Mentorship
 
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
+### For vs forEach() vs for/in vs for/of in JavaScript
+```javascript 
+* for (let i = 0; i < arr.length; ++i)
+* arr.forEach((v, i) => { /* ... */ })
+* for (let i in arr)
+* for (const v of arr)
 ```
-
-# **fsdfsdfd**
-#### *sdfsdfsd*
-
-
-**fsdfsdfsdfd**
-
-
-*sdfsdfsdf*
-
-__sdfsdfsdfds__
-
-_sdfsdfsdfsdf_
+The `for`and `for/in` looping constructs give you access to the index in the array, not the actual element.

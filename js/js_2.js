@@ -1,3 +1,9 @@
 let arr = ['My', 'age', 'is', 25];
 
-console.log(arr[0]);
+// for(let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+for(let i in arr) {
+    console.log(arr);
+}
