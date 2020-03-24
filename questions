@@ -1,0 +1,72 @@
+1. Різниця між (пояснити сам процес як воно інтерпритує код)
+               var a = 5;
+
+               if(true) {
+                   var a = 10;
+                   console.log(a);
+               }
+
+               console.log(a);
+
+               і
+
+               var a = 5;
+
+               if(true) {
+                   let a = 10;
+                   console.log(a);
+               }
+
+               console.log(a);
+
+2. Чому це не працює із функціями(замість умови)??
+3. Працює лише тоді, якщо у функції забрати var
+4. Кроки виконання
+console.log(a); // underfined
+var a = 5;
+що за чим вспливає і тд
+
+5. ПОЯСНИТИ ЦЮ, ЗАДАЧУ. ЧОМУ КОЛИ МИ МІНЯЄМО LET на VAR, то завжди виводитиме 10
+function makeArmy() {
+
+       let shooters = [];
+
+       for (let i = 0; i < 10; i++) {
+           shooters.push(function() {
+               alert( i ); // выводит свой номер
+           });
+       }
+
+       return shooters;
+   }
+
+   var army = makeArmy();
+
+   army[0](); // 0
+   army[5](); // 5
+
+6. Чому коли WHILE поміняти на FOR, тоді все буде добре
+
+function makeArmy() {
+  let shooters = [];
+
+  let i = 0;
+  while (i < 10) {
+    let shooter = function() { // функция shooter
+      alert( i ); // должна выводить порядковый номер
+    };
+    shooters.push(shooter);
+    i++;
+  }
+
+  return shooters;
+}
+
+let army = makeArmy();
+
+army[0](); // у 0-го стрелка будет номер 10
+army[5](); // и у 5-го стрелка тоже будет номер 10
+// ... у всех стрелков будет номер 10, вместо 0, 1, 2, 3...
+
+7. Якщо до всіх змінних оголошених через var, до function declaration i expression можна звертатись до window.
+то якому обєкту належать var, const?
